@@ -14,6 +14,9 @@ export default createStore({
 		setToken(state, token) {
 			state.token = token;
 		},
+		setIsLogin(state, isLogin) {
+			state.isLogin = isLogin;
+		},
 	},
 	actions: {},
 	modules: {},
