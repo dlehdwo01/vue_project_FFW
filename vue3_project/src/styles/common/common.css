@@ -1,0 +1,274 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+button {
+	cursor: pointer;
+	background-color: rgb(238, 238, 238);
+	border-radius: 4px;
+	padding: 5px 8px 6px;
+	color: rgb(34, 34, 34);
+	border: 1px solid rgb(225, 225, 225);
+	font-size: 12px;
+	text-decoration: none;
+}
+button:hover {
+	background-color: rgb(230, 230, 230);
+}
+#container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.body-container {
+	flex-grow: 1;
+	display: flex;
+}
+
+span {
+	color: rgb(34, 34, 34);
+}
+
+/* Margin-left */
+.ml-10 {
+	margin-left: 10px;
+}
+.ml-20 {
+	margin-left: 20px;
+}
+.ml-30 {
+	margin-left: 30px;
+}
+
+/* Margin-top */
+.mt-10 {
+	margin-top: 10px;
+}
+.mt-20 {
+	margin-top: 20px;
+}
+.mt-30 {
+	margin-top: 30px;
+}
+
+/* Margin-bottom */
+.mb-10 {
+	margin-bottom: 10px;
+}
+.mb-20 {
+	margin-bottom: 20px;
+}
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+/* Margin-right */
+.mr-10 {
+	margin-right: 10px;
+}
+.mr-20 {
+	margin-right: 20px;
+}
+.mr-30 {
+	margin-right: 30px;
+}
+
+/* All sides margin (optional) */
+.m-10 {
+	margin: 10px;
+}
+.m-20 {
+	margin: 20px;
+}
+.m-30 {
+	margin: 30px;
+}
+
+/* Padding-left */
+.pl-10 {
+	padding-left: 10px;
+}
+.pl-20 {
+	padding-left: 20px;
+}
+.pl-30 {
+	padding-left: 30px;
+}
+
+/* Padding-top */
+.pt-10 {
+	padding-top: 10px;
+}
+.pt-20 {
+	padding-top: 20px;
+}
+.pt-30 {
+	padding-top: 30px;
+}
+
+/* Padding-bottom */
+.pb-10 {
+	padding-bottom: 10px;
+}
+.pb-20 {
+	padding-bottom: 20px;
+}
+.pb-30 {
+	padding-bottom: 30px;
+}
+
+/* Padding-right */
+.pr-10 {
+	padding-right: 10px;
+}
+.pr-20 {
+	padding-right: 20px;
+}
+.pr-30 {
+	padding-right: 30px;
+}
+
+/* All sides padding (optional) */
+.p-10 {
+	padding: 10px;
+}
+.p-20 {
+	padding: 20px;
+}
+.p-30 {
+	padding: 30px;
+}
+
+.p-5-10 {
+	padding: 5px 10px;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Justify-content classes */
+
+/* 아이템을 왼쪽에 정렬 */
+.justify-content-start {
+	justify-content: flex-start;
+}
+
+/* 아이템을 중앙에 정렬 */
+.justify-content-center {
+	justify-content: center;
+}
+
+/* 아이템을 오른쪽에 정렬 */
+.justify-content-end {
+	justify-content: flex-end;
+}
+
+/* 아이템 사이에 동일한 간격으로 배치 */
+.justify-content-between {
+	justify-content: space-between;
+}
+
+/* 아이템 사이에 동일한 간격과 양옆에도 동일한 여백 */
+.justify-content-around {
+	justify-content: space-around;
+}
+
+/* 아이템 사이에 동일한 간격으로 배치하고 양옆에도 동일한 여백 */
+.justify-content-evenly {
+	justify-content: space-evenly;
+}
+
+/* Align-items classes */
+
+/* 아이템을 상단에 정렬 */
+.align-items-start {
+	align-items: flex-start;
+}
+
+/* 아이템을 중앙에 정렬 */
+.align-items-center {
+	align-items: center;
+}
+
+/* 아이템을 하단에 정렬 */
+.align-items-end {
+	align-items: flex-end;
+}
+
+/* 아이템을 교차 축으로 늘림 */
+.align-items-stretch {
+	align-items: stretch;
+}
+
+/* 아이템을 baseline에 정렬 */
+.align-items-baseline {
+	align-items: baseline;
+}
+
+.modal-background {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.1);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-confirm {
+	background-color: white;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	min-width: 250px;
+	max-width: 350px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.fs-10 {
+	font-size: 10px;
+}
+
+.fs-12 {
+	font-size: 10px;
+}
+
+.fs-14 {
+	font-size: 14px;
+}
+
+.fs-16 {
+	font-size: 16px;
+}
+
+.gap-10 {
+	gap: 10px;
+}
+
+.gap-20 {
+	gap: 20px;
+}
+.gap-30 {
+	gap: 30px;
+}
+
+.text-align-center {
+	text-align: center;
+}
