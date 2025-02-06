@@ -107,7 +107,7 @@ const placeholderText = computed(() => {
 			return '원하시는 정보를 입력해주세요.';
 	}
 });
-
+// (houseCategory: string) => houserCategory는 매개변수이면서 : string 는 타입을 지정해주는 타입스크립트의 문법이 합쳐진 결과
 const changeCategory = (houseCategory: string) => {
 	selectedCategory.value = houseCategory;
 };
