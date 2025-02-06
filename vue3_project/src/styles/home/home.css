@@ -1,0 +1,43 @@
+.home-body {
+	padding: 20px;
+}
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.loading {
+	font-size: 1.2rem;
+	color: #888;
+}
+
+.post-item {
+	border: 1px solid #ddd;
+	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.post-item h2 {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+}
+
+.post-item button {
+	padding: 5px 10px;
+	font-size: 1rem;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.post-item button:hover {
+	background-color: #0056b3;
+}
+
+.no-posts {
+	color: #888;
+	font-size: 1.2rem;
+}
