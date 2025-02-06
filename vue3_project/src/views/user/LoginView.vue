@@ -30,6 +30,9 @@ import VueHeader from '@/components/HeaderView/HeaderView.vue';
 import { ref } from 'vue';
 import { loginUser } from '@/api/user/login';
 import router from '@/router';
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 const confirmModal = ref<InstanceType<typeof UIConfirm> | null>();
 let id = '';
@@ -52,7 +55,8 @@ const onClickLogin = async () => {
 		const { data } = await loginUser({ id: id, pwd: pwd });
 		if (data == 'success') {
 			console.log('로그인 성공');
-			router.push('/');
+			store.commit('setIsLogin', true);
+			router.push('/home/villa/map');
 		} else {
 			confirmModal.value?.open({
 				message: '아이디 또는 비밀번호를 확인해 주세요',
