@@ -58,7 +58,10 @@
 		</div>
 	</div>
 	<!-- Header Bottom -->
-	<div style="border-bottom: 1px solid #ccc" v-if="activeCategory">
+	<div
+		style="border-bottom: 1px solid #ccc"
+		v-if="activeCategory && activeCategory2"
+	>
 		<div class="flex-row pl-30 align-items-center">
 			<div
 				class="p-10-20 fw-300 color-3"
@@ -92,16 +95,16 @@ onMounted(() => {
 	activeCategory.value =
 		items1.value.find(item => route.path.includes('home/' + item.value))
 			?.value ?? null;
-
 	// 현재 카테고리2 세팅
 	if (activeCategory.value) {
-		let temp = items2[activeCategory.value].filter(item =>
-			route.path.includes(item.url),
-		);
+		let temp =
+			items2[activeCategory.value]?.filter(item =>
+				route.path.includes(item.url),
+			) ?? [];
 		if (temp.length == 2) {
 			temp = temp.filter(item => item.value !== 'map');
 		}
-		activeCategory2.value = temp[0].value;
+		activeCategory2.value = temp.length !== 0 ? temp[0].value : '';
 		console.log(temp);
 	}
 });

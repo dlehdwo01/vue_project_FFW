@@ -19,6 +19,7 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import('@/views/user/RegisterView.vue'),
 		meta: { title: 'Vue - 회원가입' },
 	},
+	// 아파트
 	{
 		path: '/home/apt/map',
 		name: 'aptMap',
@@ -37,11 +38,37 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import('@/views/home/apt/AptPopulation.vue'),
 		meta: { title: 'Vue - 아파트' },
 	},
+	// 빌라
 	{
 		path: '/home/villa/map',
 		name: 'villaMap',
 		component: () => import('@/views/home/villa/VillaMap.vue'),
 		meta: { title: 'Vue - 빌라' },
+	},
+	{
+		path: '/home/villa/items/zzim',
+		name: 'villaZzim',
+		component: () => import('@/views/home/villa/VillaZzim.vue'),
+		meta: { title: 'Vue - 아파트' },
+	},
+	// 원룸
+	{
+		path: '/home/oneroom/map',
+		name: 'oneroomMap',
+		component: () => import('@/views/home/oneroom/OneroomMap.vue'),
+		meta: { title: 'Vue - 원룸' },
+	},
+	{
+		path: '/home/oneroom/items/zzim',
+		name: 'oneroomZzim',
+		component: () => import('@/views/home/oneroom/OneroomZzim.vue'),
+		meta: { title: 'Vue - 원룸' },
+	},
+	{
+		path: '/house/sell',
+		name: 'houseSell',
+		component: () => import('@/views/house/HouseSell.vue'),
+		meta: { title: 'Vue - 판매' },
 	},
 ];
 
