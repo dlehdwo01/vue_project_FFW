@@ -5,18 +5,22 @@
 			<h1 class="main-title">어떤 집을 찾고 계세요?</h1>
 			<nav class="navigation">
 				<ul class="nav-list">
-					<li class="nav-item active">아파트</li>
-					<li class="nav-item">빌라,투룸+</li>
-					<li class="nav-item">원룸</li>
-					<li class="nav-item">오피스텔</li>
-					<li class="nav-item">상가</li>
+					<li
+						v-for="(item, index) in houseCategory"
+						:key="index"
+						class="nav-item"
+						:class="{ active: selectedCategory === item }"
+						@click="changeCategory(item)"
+					>
+						{{ item }}
+					</li>
 				</ul>
 			</nav>
 			<div class="search-container">
 				<input
 					type="text"
 					class="search-input"
-					placeholder="원하시는 지역명, 지하철역, 단지명(아파트명)을 입력해주세요"
+					:placeholder="placeholderText"
 				/>
 				<button class="search-button">
 					<span class="search-icon">🔍</span>
@@ -83,5 +87,29 @@
 
 <script lang="ts" setup>
 import HeaderView from '@/components/HeaderView/HeaderView.vue';
+import { ref, computed } from 'vue';
+
+const houseCategory = ref(['아파트', '빌라,투룸+', '원룸', '오피스텔', '상가']);
+const selectedCategory = ref('아파트');
+const placeholderText = computed(() => {
+	switch (selectedCategory.value) {
+		case '아파트':
+			return '원하시는 지역명, 지하철역, 단지명(아파트명)을 입력해주세요.';
+		case '빌라,투룸+':
+			return '원하시는 지역명, 지하철역을 입력해주세요.';
+		case '원룸':
+			return '원하시는 지역명, 지하철역을 입력해주세요.';
+		case '오피스텔':
+			return '원하시는 지역명, 지하철역, 오피스텔명을 입력해주세요.';
+		case '상가':
+			return '원하시는 지역명, 지하철역을 입력해주세요.';
+		default:
+			return '원하시는 정보를 입력해주세요.';
+	}
+});
+
+const changeCategory = (houseCategory: string) => {
+	selectedCategory.value = houseCategory;
+};
 </script>
 <style src="@/styles/home/home.css" />
