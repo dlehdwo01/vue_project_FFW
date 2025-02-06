@@ -74,16 +74,3 @@ defineExpose({
 	open,
 });
 </script>
-<style>
-/* 요소가 나타날 때 */
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.25s ease;
-}
-
-/* 나타나기 전 (처음에는 투명하게) */
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
-</style>

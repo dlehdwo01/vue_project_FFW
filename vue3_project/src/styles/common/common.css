@@ -10,6 +10,18 @@ a {
 	text-decoration: none;
 	color: rgb(34, 34, 34);
 }
+.color-1 {
+	color: rgb(34, 34, 34);
+}
+.color-2 {
+	color: rgb(68, 68, 68);
+}
+.color-3 {
+	color: rgb(166, 166, 166);
+}
+div {
+	box-sizing: border-box;
+}
 button {
 	cursor: pointer;
 	background-color: rgb(238, 238, 238);
@@ -292,4 +304,15 @@ span {
 
 .text-align-center {
 	text-align: center;
+}
+/* 요소가 나타날 때 */
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.1s ease;
+}
+
+/* 나타나기 전 (처음에는 투명하게) */
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
 }

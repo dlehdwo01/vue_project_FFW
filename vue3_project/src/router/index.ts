@@ -26,6 +26,18 @@ const routes: Array<RouteRecordRaw> = [
 		meta: { title: 'Vue - 아파트' },
 	},
 	{
+		path: '/home/apt/map/offer',
+		name: 'aptOffer',
+		component: () => import('@/views/home/apt/AptOffer.vue'),
+		meta: { title: 'Vue - 아파트' },
+	},
+	{
+		path: '/home/apt/map/population',
+		name: 'aptPopulation',
+		component: () => import('@/views/home/apt/AptPopulation.vue'),
+		meta: { title: 'Vue - 아파트' },
+	},
+	{
 		path: '/home/villa/map',
 		name: 'villaMap',
 		component: () => import('@/views/home/villa/VillaMap.vue'),
