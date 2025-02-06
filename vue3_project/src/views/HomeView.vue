@@ -1,15 +1,19 @@
 <template>
 	<div>
-		<HeaderView />
+		<HomeHeader />
+		<HomeBody />
 	</div>
 </template>
 
 <script lang="ts">
-import HeaderView from '@/components/HeaderView/HeaderView.vue';
+import HomeBody from '@/components/BodyView/HomeBody.vue';
+import HomeHeader from '@/components/HeaderView/HomeHeader.vue';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
-	components: { HeaderView },
+	components: { HomeHeader, HomeBody },
 })
 export default class HomeView extends Vue {}
 </script>
+
+<style src="@/styles/home/home.css" />
