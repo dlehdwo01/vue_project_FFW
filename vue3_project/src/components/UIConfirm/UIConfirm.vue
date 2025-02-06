@@ -2,19 +2,23 @@
 	<Transition name="fade">
 		<div v-if="isVisible" class="modal-background">
 			<div class="modal-confirm p-20" style="padding-bottom: 10px">
-				<div class="mb-10 bold">{{ title }}</div>
+				<div class="mb-10 bold">{{ modalTitle }}</div>
 				<div class="mb-10 fs-14" style="overflow-wrap: break-word">
 					<span style="white-space: pre-line">
-						{{ message }}
+						{{ modalMessage }}
 					</span>
 				</div>
 				<div class="flex-row align-items-center justify-content-center">
 					<button class="m-10 p-5-10" @click="onClickConfirm" ref="confirmBtn">
-						{{ confirmText }}
+						{{ modalConfirmText }}
 					</button>
 
-					<button class="m-10 p-5-10" @click="onClickCancel" v-if="cancelText">
-						{{ cancelText }}
+					<button
+						class="m-10 p-5-10"
+						@click="onClickCancel"
+						v-if="modalCancelText"
+					>
+						{{ modalCancelText }}
 					</button>
 				</div>
 			</div>
@@ -22,18 +26,19 @@
 	</Transition>
 </template>
 <script setup lang="ts">
-let isVisible = false;
-let title = '알림';
-let message = '';
-let confirmText = '확인';
-let cancelText = '';
-let onConfirmCallback = () => {
-	console.log('콜백');
-};
+import { ref } from 'vue';
+
+const isVisible = ref(false);
+const modalTitle = ref('알림');
+const modalMessage = ref('');
+const modalConfirmText = ref('확인');
+const modalCancelText = ref('');
+const onConfirmCallback = ref<() => void>();
+const confirmBtn = ref<HTMLElement | null>();
 
 const onClickConfirm = () => {
 	close();
-	onConfirmCallback();
+	onConfirmCallback.value?.();
 };
 
 const onClickCancel = () => {
@@ -53,24 +58,21 @@ function open({
 	cancelText,
 	onConfirm,
 }: confirmDto) {
-	// title = title ?? '알림';
-	// message = message ?? '';
-	// confirmText = confirmText ?? '확인';
-	// cancelText = cancelText ?? '';
-	// onConfirmCallback =
-	// 	onConfirm ??
-	// 	(() => {
-	// 		console.log('콜백');
-	// 	});
-	isVisible = true;
-	// $nextTick(() => {
-	// 	($refs.confirmBtn as HTMLButtonElement).focus();
-	// });
+	modalTitle.value = title ?? '알림';
+	modalMessage.value = message ?? '';
+	modalConfirmText.value = confirmText ?? '확인';
+	modalCancelText.value = cancelText ?? '';
+	onConfirmCallback.value = onConfirm;
+	isVisible.value = true;
+	confirmBtn.value?.focus();
 }
 
 const close = () => {
-	isVisible = false;
+	isVisible.value = false;
 };
+defineExpose({
+	open,
+});
 </script>
 <style>
 /* 요소가 나타날 때 */
