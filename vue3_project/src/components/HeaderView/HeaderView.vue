@@ -63,6 +63,7 @@
 		v-if="activeCategory && activeCategory2"
 	>
 		<div class="flex-row pl-30 align-items-center">
+			<!-- depth2 items -->
 			<div
 				class="p-10-20 fw-300 color-3"
 				style="cursor: pointer"
